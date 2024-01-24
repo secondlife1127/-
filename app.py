@@ -12,7 +12,7 @@ students = [
 
 @app.route("/")
 def helloworld():
-    return "Hello World!"
+    return redirect("/login")
 
 @app.route("/login",methods=["GET","POST"])
 def login():
