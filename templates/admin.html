@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin</title>
+    <link rel = "stylesheet" href = "/static/css/bootstrap.css">
+</head>
+<body>
+    <table class="table table-bordered" style="width: 600px;margin: 10px auto;">
+        <thead>
+          <tr>
+            <th scope="col">姓名</th>
+            <th scope="col">语文</th>
+            <th scope="col">数学</th>
+            <th scope="col">英语</th>
+          </tr>
+        </thead>
+        <tbody>
+            {%for stu in students%}                        {#jinjia2模板语言#}
+                <tr>
+                    <td>{{stu.name}}</td>
+                    <td>{{stu.chinese}}</td>
+                    <td>{{stu.math}}</td>
+                    <td>{{stu.english}}</td>
+                    <td><a href="/delete?name={{stu.name}}">删除</a></td>
+                    <td><a href="/change?name={{stu.name}}">修改 </a></td>
+                </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+    <div style="width: 600px;margin: 10px auto;">
+    <a class="btn btn-primary" href="/add" role="button">添加学员信息</a>
+    </div>
+</body>
+</html>
